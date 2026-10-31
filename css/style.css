@@ -817,14 +817,14 @@ h1, h2, h3, h4, h5, h6 {
   padding: 8.5rem 0 5rem;
   background-image: 
     linear-gradient(to bottom, 
-      rgba(255, 255, 255, 0.45) 0%, 
-      rgba(255, 255, 255, 0.74) 28%, 
-      rgba(255, 255, 255, 0.91) 60%, 
+      rgba(255, 255, 255, 0.40) 0%, 
+      rgba(255, 255, 255, 0.72) 26%, 
+      rgba(255, 255, 255, 0.90) 58%, 
       #ffffff 100%
     ),
-    url('../assets/images/real_redwood_proposal.jpg?v=2');
+    url('../assets/images/redwoods_floral_fusion.jpg?v=2');
   background-size: cover;
-  background-position: center 25%;
+  background-position: center top;
   background-repeat: no-repeat;
   text-align: center;
   overflow: hidden;
