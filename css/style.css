@@ -1062,30 +1062,28 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 .story-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(300px, 380px) 1fr;
   gap: 3.5rem;
   align-items: center;
 }
 
 .story-image-card {
   position: relative;
+  width: 100%;
+  max-width: 380px;
   border-radius: var(--radius-lg);
-  padding: 12px;
+  padding: 10px;
   background: linear-gradient(135deg, rgba(29, 106, 42, 0.25), #ffffff, rgba(126, 18, 39, 0.25));
+  border: 1.5px solid rgba(200, 142, 26, 0.4);
   box-shadow: var(--shadow-elevated);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  margin: 0 auto;
 }
 
 .story-image-card img {
-  width: auto;
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  max-height: 640px;
-  object-fit: contain;
-  margin: 0 auto;
+  aspect-ratio: 577 / 1024;
+  object-fit: cover;
   border-radius: calc(var(--radius-lg) - 6px);
   display: block;
   box-shadow: 0 4px 20px rgba(29, 106, 42, 0.12);
@@ -1093,11 +1091,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .story-image-badge {
   position: absolute;
-  bottom: -20px;
-  right: 25px;
+  bottom: -16px;
+  right: 18px;
   background: #ffffff;
   border: 1.5px solid var(--gold-primary);
-  padding: 0.9rem 1.6rem;
+  padding: 0.7rem 1.3rem;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-elevated);
   text-align: center;
