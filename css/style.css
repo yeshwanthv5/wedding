@@ -1,0 +1,1991 @@
+/* ==========================================================================
+   ANKITHA & YESHWANTH WEDDING & RSVP MANAGEMENT SYSTEM
+   California Light Luxury Theme:
+   Golden Gate, Coastal Redwoods, Silicon Valley AI & Civil/Environmental Engineering
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Gidugu&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Ramabhadra&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+  /* Traditional Indian Wedding Palette from Save the Date Poster (White, Banana Leaf Green, Kumkum Red, Marigold Gold) */
+  --bg-main: #ffffff;               /* Pristine Traditional Ivory White Canvas */
+  --bg-surface: #ffffff;            /* Pure Crisp White Card */
+  --bg-surface-glass: rgba(255, 255, 255, 0.95);
+  --bg-cream: #f8faf7;              /* Delicate Jasmine Leaf Whisper White */
+  --bg-accent-light: #edf7ef;       /* Fresh Banana Leaf Soft Wash */
+  --bg-accent-red-light: #fdf2f4;   /* Sacred Kumkum Delicate Tint */
+  --bg-warm-gold: #fdfbf7;          /* Soft Marigold Shimmer */
+  
+  /* Auspicious Indian Traditional Reds (Kumkum, Bridal Crimson & Sacred Rose) */
+  --color-burgundy: #5c0b1c;        /* Deep Mandapam Calligraphy Maroon */
+  --color-redwood: #7e1227;         /* Sacred Kumkum Crimson Red from Poster */
+  --color-redwood-light: #a81c38;   /* Vibrant Rose Petal Crimson */
+  --color-redwood-bright: #c41e3d;  /* Toranam Garland Bright Red */
+  --color-redwood-tint: rgba(126, 18, 39, 0.08);
+
+  /* Sacred Botanical Greens (Banana Leaf, Mango Leaf & Auspicious Foliage) */
+  --color-environmental: #1d6a2a;   /* Lush Temple Banana Leaf Green from Poster */
+  --color-environmental-light: #2c853b; /* Fresh Tropical Leaf */
+  --color-environmental-tint: #edf7ef; /* Delicate Leaf Wash */
+  --color-leaf-deep: #13481b;       /* Forest Canopy Deep Green */
+  
+  /* Marigold Flower & Temple Brass Accents */
+  --gold-primary: #c89228;          /* Rich Temple Brass & Marigold Garland */
+  --gold-light: #ebb544;            /* Sunlit Marigold Yellow */
+  --gold-dark: #966710;             /* Antique Vilakku Bronze */
+  --color-marigold: #df7e14;        /* Saffron-Marigold Orange */
+  --color-saffron: #c8640c;
+
+  /* Mandap Stone & Golden Gate Accents */
+  --color-mandap-stone: #546069;    /* Carved Granite Mandap Pillar */
+  --color-bridge-terracotta: #a84236; /* Soft Watercolor Golden Gate */
+  
+  /* Gradients */
+  --gold-gradient: linear-gradient(135deg, #966710 0%, #e0aa35 50%, #ebb544 100%);
+  --bridge-gradient: linear-gradient(135deg, #600c1c 0%, #8c142c 50%, #a81c38 100%);
+  --royal-gradient: linear-gradient(135deg, #600c1c 0%, #7e1227 50%, #a81c38 100%);
+  --leaf-gradient: linear-gradient(135deg, #13481b 0%, #1d6a2a 50%, #2c853b 100%);
+  --marigold-gradient: linear-gradient(135deg, #df7e14 0%, #ebb544 100%);
+  --tradition-gradient: linear-gradient(135deg, #7e1227 0%, #a81c38 50%, #1d6a2a 100%);
+  --tech-gradient: linear-gradient(135deg, #1d6a2a 0%, #c89228 100%);
+  
+  --gold-glow: 0 0 24px rgba(200, 146, 40, 0.25);
+  --gold-border: 1px solid rgba(200, 146, 40, 0.32);
+  --redwood-border: 1px solid rgba(126, 18, 39, 0.25);
+  --green-border: 1px solid rgba(29, 106, 42, 0.25);
+  --tech-border: 1px solid rgba(29, 106, 42, 0.25);
+
+  /* Typography Colors */
+  --text-main: #1c1416;             /* Deep Espresso Charcoal */
+  --text-muted: #544447;            /* Soft Earth Umber */
+  --text-light: #766366;            /* Warm Sandalwood Bark */
+  --text-gold: #966710;             /* Antique Brass Inscription */
+  --text-accent: #7e1227;           /* Royal Kumkum Accent */
+  --text-green: #1d6a2a;            /* Auspicious Leaf Green */
+
+  /* Typography Families */
+  --font-heading: 'Playfair Display', serif;
+  --font-accent: 'Cinzel Decorative', serif;
+  --font-script: 'Great Vibes', cursive;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-tech: 'Space Grotesk', monospace;
+  --font-telugu: 'Ramabhadra', 'Gidugu', 'Noto Sans Telugu', sans-serif;
+
+  /* Elevation & Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-subtle: 0 4px 20px rgba(92, 11, 28, 0.04);
+  --shadow-elevated: 0 14px 38px rgba(92, 11, 28, 0.08);
+  --shadow-hover: 0 20px 48px rgba(92, 11, 28, 0.14);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.65;
+  overflow-x: hidden;
+  background-color: var(--bg-main);
+  /* Traditional Auspicious Ambient Shimmer: Banana Leaf & Sacred Kumkum on Pure White Canvas */
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(29, 106, 42, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(126, 18, 39, 0.04) 0%, transparent 45%);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Canvas Particles (Sun sparkles & redwood needle accents) */
+#particles-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.015em;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.script-text {
+  font-family: var(--font-script);
+  font-weight: 400;
+  color: var(--color-environmental);
+  line-height: 1.2;
+}
+
+.gold-gradient-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.california-gradient-text {
+  background: var(--bridge-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Traditional Telugu Auspicious Invocations */
+.telugu-invocation {
+  text-align: center;
+  margin-bottom: 0.9rem;
+}
+
+.telugu-blessing-quote {
+  font-family: var(--font-telugu);
+  font-size: 1.35rem;
+  letter-spacing: 0.03em;
+  color: var(--color-redwood);
+  font-weight: 600;
+  text-shadow: 0 0 12px rgba(200, 146, 40, 0.25);
+  margin-bottom: 0.25rem;
+  line-height: 1.4;
+}
+
+.telugu-blessing-sub {
+  font-family: var(--font-telugu);
+  font-size: 1.05rem;
+  color: var(--color-environmental);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+
+.couple-telugu-badge {
+  font-family: var(--font-telugu);
+  font-size: 1.15rem;
+  color: var(--color-redwood);
+  background: var(--bg-accent-light);
+  border: 1.5px solid rgba(29, 106, 42, 0.35);
+  border-radius: var(--radius-full);
+  display: block;
+  width: fit-content;
+  padding: 0.45rem 1.6rem;
+  margin: 0.5rem auto 0.75rem auto;
+  box-shadow: 0 2px 10px rgba(29, 106, 42, 0.1);
+  line-height: 1.5;
+}
+
+.telugu-parent-sub {
+  font-family: var(--font-telugu);
+  font-size: 0.95rem;
+  color: var(--color-redwood);
+  font-weight: 500;
+  display: inline-block;
+  margin-left: 4px;
+}
+
+.telugu-script-tag {
+  font-family: var(--font-telugu);
+  font-size: 1.05rem;
+  color: var(--color-environmental);
+  display: block;
+  font-weight: 600;
+  margin-top: -0.25rem;
+  margin-bottom: 0.65rem;
+  letter-spacing: 0.02em;
+}
+
+.footer-telugu-blessing {
+  font-family: var(--font-telugu);
+  font-size: 1.35rem;
+  color: var(--color-redwood);
+  margin-bottom: 0.75rem;
+  text-shadow: 0 0 10px rgba(200, 142, 26, 0.25);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   14 SACRED VEDIC TELUGU CEREMONY STEPS STYLES
+   ========================================================================== */
+.ceremony-intro-card {
+  background: #ffffff;
+  border: 1.5px solid rgba(200, 142, 26, 0.35);
+  border-radius: var(--radius-md);
+  padding: 2rem 2.2rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-subtle);
+  position: relative;
+  overflow: hidden;
+}
+
+.ceremony-intro-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--bridge-gradient);
+}
+
+.ceremony-intro-text {
+  font-size: 1.12rem;
+  color: var(--text-main);
+  max-width: 820px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.ceremony-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 992px) {
+  .ceremony-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .ceremony-steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ceremony-step-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(200, 142, 26, 0.25);
+  padding: 1.6rem 1.6rem;
+  box-shadow: var(--shadow-subtle);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.ceremony-step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elevated);
+  border-color: rgba(200, 142, 26, 0.5);
+}
+
+.ceremony-step-card.highlight {
+  border: 1.5px solid var(--gold-primary);
+  background: linear-gradient(180deg, #ffffff 0%, #fffdf8 100%);
+}
+
+.step-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.9rem;
+}
+
+.step-num-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-cream);
+  color: var(--color-redwood);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(200, 142, 26, 0.25);
+}
+
+.step-time-pill {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.step-card-title-telugu {
+  font-family: var(--font-telugu);
+  font-size: 1.35rem;
+  color: var(--color-redwood);
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.step-card-title-en {
+  font-size: 1.15rem;
+  font-family: var(--font-heading);
+  color: var(--text-main);
+  margin-bottom: 0.65rem;
+  font-weight: 700;
+}
+
+.step-card-body {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.68;
+  flex-grow: 1;
+}
+
+/* Seven Vows (Sapthapadi) List & Compact Chips */
+.sapthapadi-vows {
+  list-style: none;
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding-left: 0;
+}
+
+.sapthapadi-vow-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+.sapthapadi-vow-item i {
+  color: var(--gold-primary);
+  margin-top: 4px;
+  font-size: 0.75rem;
+}
+
+.sapthapadi-compact-box {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.42rem;
+}
+
+.vow-chip {
+  background: var(--bg-cream);
+  border: 1px solid rgba(200, 142, 26, 0.22);
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.65rem;
+  font-size: 0.84rem;
+  color: var(--text-main);
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vow-chip span {
+  color: var(--color-redwood);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+/* Concluding Blessings Substeps List */
+.ceremony-substeps-list {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.substep-item {
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--text-main);
+  background: var(--bg-cream);
+  border-left: 3px solid var(--gold-primary);
+  padding: 0.45rem 0.65rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.subham-bhavatu-badge {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding: 1.25rem 2rem;
+  background: rgba(200, 142, 26, 0.12);
+  border: 1px dashed var(--gold-primary);
+  border-radius: var(--radius-md);
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subham-bhavatu-text {
+  font-family: var(--font-telugu);
+  font-size: 1.7rem;
+  color: var(--color-redwood);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.subham-bhavatu-sub {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   WEDDING LIVE STREAM (YOUTUBE EMBED)
+   ========================================================================== */
+.livestream-section {
+  background: linear-gradient(to bottom, #ffffff 0%, var(--bg-cream) 100%);
+  position: relative;
+}
+
+.live-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(126, 18, 39, 0.08);
+  border: 1px solid rgba(126, 18, 39, 0.3);
+  color: var(--color-redwood);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.4rem 1.1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.85rem;
+}
+
+.live-indicator-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-redwood);
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(126, 18, 39, 0.7);
+  animation: livePulse 2s infinite;
+}
+
+@keyframes livePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(126, 18, 39, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(126, 18, 39, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(126, 18, 39, 0);
+  }
+}
+
+.livestream-card {
+  max-width: 960px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1.5px solid rgba(200, 142, 26, 0.45);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-elevated);
+}
+
+.livestream-player-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  background: #111111;
+}
+
+.livestream-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.livestream-info-panel {
+  padding: 2rem 2.25rem;
+  background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%);
+  border-top: 1px solid rgba(200, 142, 26, 0.25);
+}
+
+.livestream-times-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid rgba(200, 142, 26, 0.2);
+}
+
+.livestream-time-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.time-zone-label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-redwood);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.time-zone-val {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.time-zone-highlight {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--color-environmental);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.time-zone-sub {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.livestream-cta-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 680px) {
+  .livestream-times-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .livestream-info-panel {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+/* Container */
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   NAVIGATION BAR (LIGHT LUXURY)
+   ========================================================================== */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.1rem 0;
+  transition: var(--transition-smooth);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid rgba(29, 106, 42, 0.2);
+}
+
+.site-nav.scrolled {
+  padding: 0.75rem 0;
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom-color: rgba(29, 106, 42, 0.3);
+  box-shadow: 0 8px 30px rgba(29, 106, 42, 0.08);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+}
+
+.nav-monogram {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-accent);
+  font-size: 0.95rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--color-redwood) 0%, var(--color-environmental) 100%);
+  box-shadow: 0 4px 12px rgba(126, 18, 39, 0.25);
+}
+
+.nav-couple-names {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  list-style: none;
+}
+
+.nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: var(--transition-smooth);
+  position: relative;
+  padding: 0.35rem 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--bridge-gradient);
+  transition: var(--transition-smooth);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--color-redwood);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+
+.btn-admin-toggle {
+  background: var(--color-environmental-tint);
+  border: 1px solid rgba(29, 106, 42, 0.3);
+  color: var(--color-environmental);
+  padding: 0.5rem 1.15rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition-smooth);
+}
+
+.btn-admin-toggle:hover {
+  background: var(--color-environmental);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(29, 106, 42, 0.25);
+}
+
+.admin-badge-count {
+  background: var(--gold-primary);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.12rem 0.5rem;
+  border-radius: 10px;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-main);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.85rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  border: none;
+}
+
+.btn-gold {
+  background: var(--gold-gradient);
+  color: #ffffff;
+  box-shadow: 0 4px 18px rgba(200, 146, 40, 0.35);
+  font-weight: 700;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(200, 146, 40, 0.5);
+  color: #ffffff;
+}
+
+.btn-redwood {
+  background: linear-gradient(135deg, var(--color-redwood) 0%, var(--color-redwood-light) 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 18px rgba(126, 18, 39, 0.3);
+  font-weight: 700;
+}
+
+.btn-redwood:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(126, 18, 39, 0.45);
+}
+
+.btn-outline-gold {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--color-environmental);
+  border: 1.5px solid var(--color-environmental);
+  box-shadow: var(--shadow-subtle);
+}
+
+.btn-outline-gold:hover {
+  background: var(--color-environmental);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(29, 106, 42, 0.25);
+}
+  box-shadow: var(--shadow-subtle);
+}
+
+.btn-sm {
+  padding: 0.5rem 1.1rem;
+  font-size: 0.84rem;
+}
+
+/* ==========================================================================
+   HERO SECTION (CALIFORNIA SUNLIGHT & COASTAL REDWOODS)
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8.5rem 0 5rem;
+  background-image: 
+    linear-gradient(to bottom, 
+      rgba(255, 255, 255, 0.38) 0%, 
+      rgba(255, 255, 255, 0.72) 26%, 
+      rgba(255, 255, 255, 0.90) 58%, 
+      #ffffff 100%
+    ),
+    url('../assets/images/redwoods_floral_fusion.jpg?v=2');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+
+/* California Wedding Destination Badge */
+.california-wedding-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(29, 106, 42, 0.3);
+  border-radius: var(--radius-full);
+  padding: 0.45rem 1.3rem;
+  margin-bottom: 1.15rem;
+  box-shadow: var(--shadow-subtle);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.california-wedding-badge i {
+  color: var(--color-redwood);
+}
+
+.invitation-parents {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.parent-names {
+  color: var(--color-redwood);
+  font-weight: 700;
+}
+
+.invitation-lead {
+  font-size: 1.15rem;
+  font-style: italic;
+  font-family: var(--font-heading);
+  color: var(--text-light);
+  margin-bottom: 0.4rem;
+}
+
+.couple-title {
+  font-size: clamp(2.7rem, 6.2vw, 4.8rem);
+  font-weight: 900;
+  line-height: 1.12;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+  text-shadow: 0 2px 20px rgba(126, 18, 39, 0.12);
+}
+
+.ampersand {
+  font-family: var(--font-script);
+  font-size: 0.85em;
+  color: var(--gold-primary);
+  margin: 0 0.35rem;
+  display: inline-block;
+}
+
+.wedding-date-banner {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  background: #ffffff;
+  border: 1.5px solid rgba(200, 146, 40, 0.45);
+  padding: 0.75rem 2.2rem;
+  border-radius: var(--radius-full);
+  margin: 0.5rem auto 1.5rem auto;
+  box-shadow: 0 8px 24px rgba(126, 18, 39, 0.08);
+}
+
+.date-text {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-redwood);
+}
+
+.date-divider {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-environmental);
+}
+
+.muhurtham-tag {
+  color: var(--color-environmental);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.hero-venue-info {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+  font-weight: 500;
+}
+
+.hero-venue-info i {
+  color: var(--color-redwood);
+  margin-right: 0.4rem;
+}
+
+/* Countdown Clock (Light Theme) */
+.countdown-container {
+  margin: 1.75rem auto;
+  max-width: 620px;
+}
+
+.countdown-title {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-environmental);
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.countdown-card {
+  background: #ffffff;
+  border: 1.5px solid rgba(29, 106, 42, 0.25);
+  border-radius: var(--radius-md);
+  padding: 1.15rem 0.5rem;
+  box-shadow: var(--shadow-subtle);
+  transition: var(--transition-smooth);
+}
+
+.countdown-card:hover {
+  border-color: var(--color-environmental);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.countdown-num {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  color: var(--color-redwood);
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.countdown-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.hero-cta-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+/* ==========================================================================
+   SECTIONS GENERAL
+   ========================================================================== */
+.section {
+  padding: 6.5rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3.75rem;
+}
+
+.section-subtitle {
+  font-family: var(--font-script);
+  font-size: 2.4rem;
+  color: var(--color-environmental);
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+
+.section-title {
+  font-size: clamp(2.1rem, 3.6vw, 3rem);
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+.section-description {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* ==========================================================================
+   STORY & VOWS SECTION (CIVIL + TECH/AI + REDWOODS)
+   ========================================================================== */
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.story-image-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  padding: 10px;
+  background: linear-gradient(135deg, rgba(29, 106, 42, 0.35), #ffffff, rgba(126, 18, 39, 0.3));
+  box-shadow: var(--shadow-elevated);
+}
+
+.story-image-card img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  object-position: center 15%;
+  border-radius: calc(var(--radius-lg) - 6px);
+  display: block;
+}
+
+.story-image-badge {
+  position: absolute;
+  bottom: -20px;
+  right: 25px;
+  background: #ffffff;
+  border: 1.5px solid var(--gold-primary);
+  padding: 0.9rem 1.6rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-elevated);
+  text-align: center;
+}
+
+.story-image-badge span {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--color-redwood);
+  font-weight: 700;
+}
+
+.story-content h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1.25rem;
+  color: var(--text-main);
+}
+
+.story-content p {
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+/* Special Badges for Ankitha & Yeshwanth's background */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.75rem 0;
+}
+
+.pillar-item {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(200, 142, 26, 0.25);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  box-shadow: var(--shadow-subtle);
+  transition: var(--transition-smooth);
+}
+
+.pillar-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold-primary);
+  box-shadow: var(--shadow-elevated);
+}
+
+.pillar-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.pillar-icon.civil {
+  background: var(--color-environmental-tint);
+  color: var(--color-environmental);
+}
+
+.pillar-icon.tech {
+  background: #eff6ff;
+  color: var(--color-tech-ai);
+}
+
+.pillar-icon.bridge {
+  background: #fdf2f0;
+  color: var(--color-redwood);
+}
+
+.pillar-icon.nature {
+  background: #fefce8;
+  color: var(--gold-primary);
+}
+
+.pillar-text h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.15rem;
+}
+
+.pillar-text p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+.story-quote {
+  border-left: 3px solid var(--color-redwood);
+  padding-left: 1.25rem;
+  font-style: italic;
+  font-family: var(--font-heading);
+  color: var(--color-environmental);
+  font-size: 1.15rem;
+  margin-top: 1.5rem;
+}
+
+/* ==========================================================================
+   CALIFORNIA & CONNECTICUT LOVE STORY COLLAGE
+   ========================================================================== */
+.story-collage-wrapper {
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(200, 142, 26, 0.25);
+}
+
+.story-collage-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 2.5rem auto;
+}
+
+.story-collage-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.story-collage-subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.story-collage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.collage-item {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  border: 1.5px solid rgba(200, 142, 26, 0.35);
+  background: #ffffff;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  aspect-ratio: 4/3;
+}
+
+.collage-item:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-elevated);
+  border-color: var(--gold-primary);
+}
+
+.collage-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.collage-item:hover img {
+  transform: scale(1.06);
+}
+
+.collage-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2.5rem 1.15rem 1rem;
+  background: linear-gradient(to top, rgba(20, 15, 12, 0.92) 0%, rgba(20, 15, 12, 0.5) 60%, transparent 100%);
+  color: #ffffff;
+}
+
+.collage-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--gold-primary);
+  margin-bottom: 0.25rem;
+}
+
+.collage-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+  line-height: 1.25;
+}
+
+.collage-desc {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.35;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .story-collage-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .story-collage-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   SLEEK VISUAL TIMELINE INFOGRAPHIC (PURE VISUAL FLOW, ZERO REDUNDANCY)
+   ========================================================================== */
+.visual-timeline-container {
+  max-width: 1160px;
+  margin: 2.5rem auto 1rem auto;
+  position: relative;
+  padding: 1.5rem 0.5rem;
+}
+
+/* Horizontal Golden Progress Rail (Desktop) */
+.timeline-rail-bar {
+  position: absolute;
+  top: 98px;
+  left: 10%;
+  right: 10%;
+  height: 3.5px;
+  background: linear-gradient(90deg, 
+    rgba(29, 106, 42, 0.25) 0%, 
+    var(--color-environmental) 25%, 
+    var(--color-redwood) 50%, 
+    var(--color-environmental) 75%, 
+    rgba(29, 106, 42, 0.25) 100%
+  );
+  border-radius: var(--radius-full);
+  z-index: 1;
+  box-shadow: 0 0 12px rgba(29, 106, 42, 0.28);
+}
+
+.timeline-milestones-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.85rem;
+  position: relative;
+  z-index: 2;
+}
+
+.milestone-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  min-width: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Time Callout Above Orb */
+.milestone-time-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.9rem;
+  min-height: 48px;
+  justify-content: flex-end;
+}
+
+.milestone-time {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-environmental);
+  letter-spacing: 0.3px;
+  line-height: 1.1;
+}
+
+.milestone-item.featured .milestone-time {
+  color: var(--color-redwood);
+  font-size: 1.35rem;
+}
+
+.milestone-window {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-top: 0.2rem;
+}
+
+/* Circular Milestone Orb Sitting on Timeline Rail */
+.milestone-orb {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid var(--color-environmental);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-environmental);
+  font-size: 1.25rem;
+  box-shadow: 0 0 0 6px #ffffff, 0 5px 16px rgba(29, 106, 42, 0.2);
+  margin-bottom: 1.3rem;
+  position: relative;
+  z-index: 3;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.milestone-item:hover .milestone-orb {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 6px #ffffff, 0 8px 24px rgba(29, 106, 42, 0.35);
+}
+
+.milestone-item.featured .milestone-orb {
+  width: 66px;
+  height: 66px;
+  background: linear-gradient(135deg, var(--color-redwood) 0%, var(--color-burgundy) 100%);
+  border-color: var(--gold-light);
+  color: #ffffff;
+  box-shadow: 0 0 0 6px #ffffff, 0 8px 26px rgba(126, 18, 39, 0.35);
+}
+
+/* Compact Milestone Infographic Card Below Rail */
+.milestone-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1.5px solid rgba(29, 106, 42, 0.22);
+  border-radius: var(--radius-md);
+  padding: 1.15rem 0.65rem;
+  box-shadow: 0 4px 16px rgba(29, 106, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  transition: var(--transition-smooth);
+}
+
+.milestone-item:hover .milestone-card {
+  transform: translateY(-4px);
+  border-color: var(--color-environmental);
+  box-shadow: var(--shadow-hover);
+}
+
+.milestone-item.featured .milestone-card {
+  border: 2px solid var(--color-redwood);
+  background: linear-gradient(180deg, #ffffff 0%, var(--bg-accent-red-light) 100%);
+  box-shadow: 0 8px 24px rgba(126, 18, 39, 0.12);
+}
+
+.milestone-mobile-time {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px dashed rgba(200, 142, 26, 0.25);
+  margin-bottom: 0.2rem;
+}
+
+.milestone-mobile-time .milestone-time {
+  font-size: 1.1rem;
+}
+
+.milestone-highlight-tag {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--color-redwood);
+  background: rgba(126, 18, 39, 0.08);
+  border: 1px solid rgba(126, 18, 39, 0.25);
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.2rem;
+  white-space: nowrap;
+}
+
+.milestone-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.milestone-telugu {
+  font-family: var(--font-telugu);
+  font-size: 0.82rem;
+  color: var(--color-redwood);
+  font-weight: 600;
+  background: var(--bg-accent-light);
+  border: 1px solid rgba(29, 106, 42, 0.2);
+  padding: 0.1rem 0.55rem;
+  border-radius: var(--radius-full);
+  display: inline-block;
+}
+
+.milestone-venue {
+  font-size: 0.83rem;
+  color: var(--color-environmental);
+  font-weight: 600;
+  margin-top: 0.35rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* Tablet & Mobile Layout: Fluid Vertical Visual Timeline */
+@media (max-width: 860px) {
+  .visual-timeline-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .timeline-rail-bar {
+    top: 30px;
+    bottom: 30px;
+    left: 36px;
+    right: auto;
+    width: 3.5px;
+    height: auto;
+    background: linear-gradient(180deg, 
+      rgba(29, 106, 42, 0.25) 0%, 
+      var(--color-environmental) 25%, 
+      var(--color-redwood) 50%, 
+      var(--color-environmental) 75%, 
+      rgba(29, 106, 42, 0.25) 100%
+    );
+  }
+
+  .timeline-milestones-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .milestone-item {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 78px;
+  }
+
+  .milestone-time-badge {
+    display: none;
+  }
+
+  .milestone-mobile-time {
+    display: flex;
+  }
+
+  .milestone-orb {
+    position: absolute;
+    left: 9px;
+    top: 14px;
+    margin-bottom: 0;
+    width: 54px;
+    height: 54px;
+    font-size: 1.15rem;
+    box-shadow: 0 0 0 5px #ffffff, 0 4px 14px rgba(29, 106, 42, 0.22);
+  }
+
+  .milestone-item.featured .milestone-orb {
+    width: 58px;
+    height: 58px;
+    left: 7px;
+    top: 12px;
+    font-size: 1.25rem;
+    box-shadow: 0 0 0 5px #ffffff, 0 5px 18px rgba(126, 18, 39, 0.35);
+  }
+
+  .milestone-card {
+    align-items: flex-start;
+    text-align: left;
+    padding: 1.15rem 1.15rem;
+  }
+}
+
+
+.timeline-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.event-card {
+  background: var(--bg-surface-glass);
+  border: var(--gold-border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold-primary);
+  box-shadow: var(--shadow-hover);
+}
+
+.event-card.featured {
+  background: linear-gradient(145deg, #ffffff 0%, #fdfbf7 100%);
+  border: 2px solid var(--gold-primary);
+  box-shadow: var(--shadow-elevated);
+}
+
+.event-card-tag {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: var(--bg-cream);
+  border: 1px solid var(--gold-primary);
+  color: var(--color-redwood);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-full);
+}
+
+.event-icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--bg-cream) 0%, #ffffff 100%);
+  border: 1.5px solid var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--color-redwood);
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+.event-time-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-environmental);
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+}
+
+.event-title {
+  font-size: 1.7rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-main);
+}
+
+.event-desc {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.event-meta {
+  border-top: 1px solid rgba(200, 142, 26, 0.2);
+  padding-top: 1.25rem;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.event-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.event-meta-item i {
+  color: var(--gold-primary);
+  width: 18px;
+}
+
+/* ==========================================================================
+   VENUE & ACCOMMODATION (CALIFORNIA REDWOODS & WEST MARIN)
+   ========================================================================== */
+.venue-section {
+  position: relative;
+  background-image: 
+    linear-gradient(to bottom, 
+      rgba(248, 250, 247, 0.92) 0%, 
+      rgba(248, 250, 247, 0.86) 50%, 
+      rgba(248, 250, 247, 0.94) 100%
+    ),
+    url('../assets/images/redwood_grove_watercolor.jpg?v=2');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.venue-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.venue-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  overflow: visible;
+  padding: 0;
+}
+
+.venue-visual-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(31, 25, 23, 0.9), transparent);
+}
+
+.venue-name-badge {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.venue-location-badge {
+  color: var(--gold-light);
+  font-size: 0.95rem;
+}
+
+.venue-details-card {
+  background: var(--bg-surface-glass);
+  border: var(--gold-border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-elevated);
+}
+
+.venue-address-box {
+  background: var(--bg-cream);
+  border: 1px dashed rgba(200, 142, 26, 0.5);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.venue-address-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-redwood);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.venue-address-text {
+  font-size: 1.1rem;
+  color: var(--text-main);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.travel-tips-list {
+  list-style: none;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.travel-tip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.travel-tip-item i {
+  color: var(--color-environmental);
+  margin-top: 0.25rem;
+  font-size: 1.1rem;
+}
+
+
+/* ==========================================================================
+   RSVP SECTION (EMBEDDED GOOGLE FORM)
+   ========================================================================== */
+.rsvp-section {
+  background: linear-gradient(to bottom, #ffffff 0%, var(--bg-cream) 100%);
+  position: relative;
+}
+
+.rsvp-box-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.rsvp-card {
+  background: #ffffff;
+  border: 1.5px solid var(--gold-primary);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.25rem;
+  box-shadow: var(--shadow-hover);
+  position: relative;
+}
+
+.google-form-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(29, 106, 42, 0.25);
+  box-shadow: var(--shadow-subtle);
+  min-height: 800px;
+}
+
+.google-form-wrapper iframe {
+  width: 100%;
+  height: 950px;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .rsvp-card {
+    padding: 2rem 1rem;
+  }
+  .google-form-wrapper iframe {
+    height: 1050px;
+  }
+}
+
+/* ==========================================================================
+   FOOTER (LIGHT)
+   ========================================================================== */
+.site-footer {
+  background: #ffffff;
+  border-top: 1.5px solid rgba(29, 106, 42, 0.2);
+  padding: 4.5rem 0 2.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-monogram {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid var(--gold-light);
+  margin: 0 auto 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-accent);
+  color: #ffffff;
+  font-size: 1.2rem;
+  background: linear-gradient(135deg, var(--color-redwood) 0%, var(--color-environmental) 100%);
+  box-shadow: 0 4px 14px rgba(29, 106, 42, 0.2);
+}
+
+.footer-couple {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.footer-blessing {
+  color: var(--text-muted);
+  max-width: 540px;
+  margin: 0 auto 2rem;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+}
+
+.footer-link:hover {
+  color: var(--color-redwood);
+}
+
+.footer-copyright {
+  color: var(--text-light);
+  font-size: 0.82rem;
+}
+
+/* ==========================================================================
+   TOAST NOTIFICATIONS
+   ========================================================================== */
+.toast-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.toast {
+  background: #ffffff;
+  border: 1.5px solid var(--color-environmental);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.4rem;
+  color: var(--text-main);
+  box-shadow: var(--shadow-elevated);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  animation: slideInToast 0.35s ease forwards;
+  font-weight: 600;
+}
+
+@keyframes slideInToast {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 992px) {
+  .story-grid, .venue-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .nav-links.mobile-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-bottom: 1.5px solid rgba(200, 142, 26, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    gap: 1.25rem;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+  .hero-section {
+    padding: 6.5rem 0 3rem;
+  }
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .wedding-date-banner {
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-md);
+  }
+  .date-divider {
+    display: none;
+  }
+  .countdown-grid {
+    gap: 0.5rem;
+  }
+  .form-row, .plus-one-row {
+    grid-template-columns: 1fr;
+  }
+  .rsvp-card {
+    padding: 2rem 1.25rem;
+  }
+  .admin-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .pass-details-table {
+    grid-template-columns: 1fr;
+  }
+}

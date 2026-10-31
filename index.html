@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Wedding celebration & RSVP portal of Ankitha and Yeshwanth on Thursday, November 26, 2026 at Stemple Creek Ranch, Tomales, California.">
+  <title>Ankitha & Yeshwanth | Wedding Celebration (కల్యాణ మహోత్సవం)</title>
+
+  <!-- Favicon Monogram -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23ffffff' stroke='%231d6a2a' stroke-width='4'/><text x='50%' y='56%' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='36' font-weight='bold' fill='%237e1227'>AY</text></svg>">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Core Light Luxury California Styling -->
+  <link rel="stylesheet" href="css/style.css?v=23">
+</head>
+
+<body>
+
+  <!-- Floating Gentle Celebration Sparkles Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Top Navigation Bar -->
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a href="#home" class="nav-brand">
+        <div class="nav-monogram">AY</div>
+        <div class="nav-couple-names">Ankitha &amp; Yeshwanth</div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#story" class="nav-link">Our Journey</a></li>
+        <li><a href="#events" class="nav-link">Schedule</a></li>
+        <li><a href="#ceremony" class="nav-link">Ceremony Guide</a></li>
+        <li><a href="#livestream" class="nav-link">Live Stream</a></li>
+        <li><a href="#venue" class="nav-link">Venue</a></li>
+      </ul>
+
+      <!-- Nav Actions (RSVP + Mobile Menu) -->
+      <div class="nav-actions">
+        <a href="#rsvp" class="btn btn-redwood btn-sm" style="display: inline-flex;">
+          <i class="fas fa-envelope-open-text"></i> RSVP
+        </a>
+
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle mobile navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN CELEBRATION CONTENT
+       ========================================================================= -->
+  <main>
+
+    <!-- Hero Section (Light California Sun & Stemple Creek Rolling Hills) -->
+    <section id="home" class="hero-section">
+      <div class="container hero-content">
+
+        <!-- Sacred Telugu Vedic Invocations -->
+        <div class="telugu-invocation">
+          <div class="telugu-blessing-quote">'వధూవరాభ్యామ్ వరదా భవంతు'</div>
+          <div class="telugu-blessing-sub">॥ శ్రీరస్తు • శుభమస్తు • అవిఘ్నమస్తు ॥ &nbsp;|&nbsp; ॥ శ్రీ మహా గణాధిపతయే నమః
+            ॥</div>
+        </div>
+
+        <div class="invitation-parents">
+          With the divine blessings of our beloved parents<br>
+          <span class="parent-names">Smt. Shobha Rani &amp; Sri Narayana Reddy</span>
+          <span class="telugu-parent-sub">(శ్రీమతి శోభారాణి &amp; శ్రీ నారాయణ రెడ్డి)</span>
+          <br>
+          <span class="parent-names">Smt. Leelavathi &amp; Sri Venkatesha</span>
+          <span class="telugu-parent-sub">(శ్రీమతి లీలావతి &amp; శ్రీ వేంకటేశ)</span>
+        </div>
+
+        <div class="invitation-lead">Cordially invite you with family and friends to celebrate the auspicious wedding
+          union of</div>
+
+        <h1 class="couple-title">
+          <span class="california-gradient-text">Ankitha</span>
+          <span class="ampersand">&amp;</span>
+          <span class="california-gradient-text">Yeshwanth</span>
+        </h1>
+
+        <!-- Traditional Telugu Wedding Honour Badge -->
+        <div class="couple-telugu-badge">
+          చి॥ల॥సౌ॥ అంకిత &nbsp;•&nbsp; చి॥ యశ్వంత్ వివాహ మహోత్సవం
+        </div>
+
+
+        <div class="wedding-date-banner">
+          <div class="date-text"><i class="far fa-calendar-alt"
+              style="margin-right:8px; color:var(--color-redwood);"></i> Thursday, November 26, 2026</div>
+        </div>
+
+        <div class="hero-venue-info">
+          <i class="fas fa-map-marker-alt"></i> Stemple Creek Ranch • 900 Burbank Ln, Tomales, CA 94971
+        </div>
+
+        <!-- Live Subha Muhurtham Countdown Clock -->
+        <div class="countdown-container">
+          <div class="countdown-title">Auspicious Subha Muhurtham Countdown (శుభ ముహూర్తం)</div>
+          <div class="countdown-grid">
+            <div class="countdown-card">
+              <span class="countdown-num" id="count-days">00</span>
+              <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-card">
+              <span class="countdown-num" id="count-hours">00</span>
+              <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-card">
+              <span class="countdown-num" id="count-minutes">00</span>
+              <span class="countdown-label">Minutes</span>
+            </div>
+            <div class="countdown-card">
+              <span class="countdown-num" id="count-seconds">00</span>
+              <span class="countdown-label">Seconds</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action CTAs -->
+        <div class="hero-cta-buttons">
+          <a href="#rsvp" class="btn btn-redwood">
+            <i class="fas fa-envelope-open-text"></i> RSVP
+          </a>
+          <button class="btn btn-outline-gold btn-add-calendar">
+            <i class="far fa-calendar-plus"></i> Add to Calendar (.ics)
+          </button>
+          <a href="#ceremony" class="btn btn-outline-gold">
+            <i class="fas fa-book-open"></i> Ceremony Guide
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Our Journey Section (From Golden Gate to West Marin) -->
+    <section id="story" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle">Our Story</div>
+          <h2 class="section-title"><span class="california-gradient-text">A California &amp; Connecticut Journey</span>
+          </h2>
+          <p class="section-description">From New England autumns and Yale in Connecticut to California redwoods, the
+            Pacific coast, and our favorite shared adventures.</p>
+        </div>
+
+        <div class="story-grid">
+          <div class="story-image-card">
+            <img src="assets/images/couple_portrait.jpg" alt="Ankitha &amp; Yeshwanth celebration portrait">
+            <div class="story-image-badge">
+              <i class="fas fa-heart" style="color:var(--color-redwood); margin-bottom: 4px;"></i>
+              <span>Ankitha &amp; Yeshwanth</span>
+              <small style="color:var(--text-muted); font-size:0.75rem;">Nov 26, 2026 • Coast to Coast</small>
+            </div>
+          </div>
+
+          <div class="story-content">
+            <p>Our journey weaves together the vibrant coastlines of Northern California and the timeless beauty of
+              Connecticut and New England. From Yeshwanth's Yale PhD in New Haven and colorful autumn road trips across
+              Maine, New Hampshire, and Vermont, to tranquil walks among ancient coastal giants in Humboldt Redwoods
+              State Park and across the Golden Gate.</p>
+            <p>Along the way, our story is celebrated through the simple moments we treasure most: exploring scenic
+              mountain and ocean trails on weekend hikes, embarking on spontaneous road trips, savoring bubbling Korean
+              soft tofu, rich bowls of ramen, fresh sushi, and leisurely weekend brunches, and sharing cozy evenings
+              connecting over intricate jigsaw puzzles and competitive board game nights.</p>
+            <p>Together with our families, we honor our sacred Vedic cultural roots while celebrating our shared life
+              across both coasts. We are blessed to have you in our lives and cannot wait to take our sacred steps
+              together amidst the golden hills of Stemple Creek Ranch.</p>
+
+            <div class="story-quote">
+              "Two hearts united by love, connecting the redwoods of California and the autumn leaves of New England,
+              blessed with the eternal traditions of family and heritage."
+            </div>
+          </div>
+    </section>
+
+    <!-- Celebrations & Itinerary Section -->
+    <section id="events" class="section" style="background: var(--bg-cream);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle">Wedding Day Schedule</div>
+          <h2 class="section-title"><span class="california-gradient-text">Celebration Timeline</span></h2>
+          <p class="section-description">Thursday, November 26, 2026 • Stemple Creek Ranch, Tomales, California</p>
+        </div>
+
+        <!-- Sleek Visual Timeline (Pure infographic flow, zero redundancy) -->
+        <div class="visual-timeline-container">
+          <!-- Horizontal Connecting Rail (Desktop) / Vertical Rail (Mobile) -->
+          <div class="timeline-rail-bar"></div>
+
+          <div class="timeline-milestones-row">
+
+            <!-- Stage 1: Welcome & Breakfast -->
+            <div class="milestone-item">
+              <div class="milestone-time-badge">
+                <span class="milestone-time">8:00 AM</span>
+                <span class="milestone-window">8:00 – 8:30 AM</span>
+              </div>
+              <div class="milestone-orb">
+                <i class="fas fa-mug-saucer"></i>
+              </div>
+              <div class="milestone-card">
+                <div class="milestone-mobile-time">
+                  <span class="milestone-time"><i class="far fa-clock"></i> 8:00 AM</span>
+                  <span class="milestone-window">8:00 – 8:30 AM</span>
+                </div>
+                <h3 class="milestone-title">Welcome &amp; Breakfast</h3>
+                <span class="milestone-telugu">ఎదురుకోలు స్వాగతం &amp; అల్పాహారం</span>
+                <div class="milestone-venue">
+                  <i class="fas fa-map-marker-alt"></i> Ranch Courtyard
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 2: Wedding Ceremony (Featured) -->
+            <div class="milestone-item featured">
+              <div class="milestone-time-badge">
+                <span class="milestone-time">8:30 AM</span>
+                <span class="milestone-window">8:30 – 10:30 AM</span>
+              </div>
+              <div class="milestone-orb">
+                <i class="fas fa-ring"></i>
+              </div>
+              <div class="milestone-card">
+                <div class="milestone-mobile-time">
+                  <span class="milestone-time"><i class="far fa-clock"></i> 8:30 AM</span>
+                  <span class="milestone-window">8:30 – 10:30 AM</span>
+                </div>
+                <div class="milestone-highlight-tag">
+                  <i class="fas fa-star"></i> ముహూర్తం: 9:20 – 10:20 AM
+                </div>
+                <h3 class="milestone-title">Wedding Ceremony</h3>
+                <span class="milestone-telugu">కల్యాణ మహోత్సవం (Subha Muhurtham)</span>
+                <div class="milestone-venue">
+                  <i class="fas fa-map-marker-alt"></i> Courtyard Mandapam
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 3: Ashirvad & Photos -->
+            <div class="milestone-item">
+              <div class="milestone-time-badge">
+                <span class="milestone-time">10:30 AM</span>
+                <span class="milestone-window">10:30 – 11:30 AM</span>
+              </div>
+              <div class="milestone-orb">
+                <i class="fas fa-camera-retro"></i>
+              </div>
+              <div class="milestone-card">
+                <div class="milestone-mobile-time">
+                  <span class="milestone-time"><i class="far fa-clock"></i> 10:30 AM</span>
+                  <span class="milestone-window">10:30 – 11:30 AM</span>
+                </div>
+                <h3 class="milestone-title">Ashirvad &amp; Photos</h3>
+                <span class="milestone-telugu">ఆశీర్వాదం &amp; ఫొటోలు</span>
+                <div class="milestone-venue">
+                  <i class="fas fa-map-marker-alt"></i> Courtyard Mandapam
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 4: Lunch & Reception -->
+            <div class="milestone-item">
+              <div class="milestone-time-badge">
+                <span class="milestone-time">11:30 AM</span>
+                <span class="milestone-window">11:30 AM – 3:00 PM</span>
+              </div>
+              <div class="milestone-orb">
+                <i class="fas fa-utensils"></i>
+              </div>
+              <div class="milestone-card">
+                <div class="milestone-mobile-time">
+                  <span class="milestone-time"><i class="far fa-clock"></i> 11:30 AM</span>
+                  <span class="milestone-window">11:30 AM – 3:00 PM</span>
+                </div>
+                <h3 class="milestone-title">Lunch &amp; Reception</h3>
+                <span class="milestone-telugu">కల్యాణ విందు భోజనం</span>
+                <div class="milestone-venue">
+                  <i class="fas fa-map-marker-alt"></i> Historic Timber Barn
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 5: Wrap Up & Farewell -->
+            <div class="milestone-item">
+              <div class="milestone-time-badge">
+                <span class="milestone-time">3:00 PM</span>
+                <span class="milestone-window">Until 4:00 PM</span>
+              </div>
+              <div class="milestone-orb">
+                <i class="fas fa-hands-praying"></i>
+              </div>
+              <div class="milestone-card">
+                <div class="milestone-mobile-time">
+                  <span class="milestone-time"><i class="far fa-clock"></i> 3:00 PM</span>
+                  <span class="milestone-window">Until 4:00 PM</span>
+                </div>
+                <h3 class="milestone-title">Wrap Up</h3>
+                <span class="milestone-telugu">కృతజ్ఞతలు &amp; వీడ్కోలు</span>
+                <div class="milestone-venue">
+                  <i class="fas fa-map-marker-alt"></i> Ranch Courtyard
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         THE STEPS OF OUR WEDDING CEREMONY (STEP-BY-STEP AGENDA)
+         ========================================================================= -->
+    <section id="ceremony" class="section">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="telugu-blessing-quote" style="margin-bottom: 0.5rem;">'వధూవరాభ్యామ్ వరదా భవంతు'</div>
+          <div class="section-subtitle">Vedic Telugu Wedding Methodology</div>
+          <h2 class="section-title"><span class="california-gradient-text">Wedding Ceremony</span></h2>
+          <p class="section-description">A guided walk through the sacred Vedic rites conducted in Sanskrit at the
+            Kalyana Mandapam.</p>
+        </div>
+
+        <!-- Introduction Card -->
+        <div class="ceremony-intro-card">
+          <h3
+            style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--color-redwood); margin-bottom: 0.75rem;">
+            The Kalyana Mandapam (కల్యాణ మండపం)
+          </h3>
+          <p class="ceremony-intro-text">
+            The Wedding takes place in the <strong>Kalyana Mandapam</strong>. This sacred wedding pavilion symbolizes
+            the <strong>Universe</strong>. The wedding ceremony is conducted in <strong>Sanskrit</strong>, the language
+            of the Hindu Scriptures, following timeless Vedic traditions.
+          </p>
+        </div>
+
+        <!-- 12 Steps Grid -->
+        <div class="ceremony-steps-grid">
+
+          <!-- Step 1 -->
+          <div class="ceremony-step-card">
+            <div class="step-card-header">
+              <span class="step-num-pill"><i class="fas fa-om"></i> Step 1</span>
+              <span class="step-time-pill"><i class="far fa-clock"></i> 10 minutes</span>
+            </div>
+            <div class="step-card-title-telugu">గణపతి పూజ</div>
+            <div class="step-card-title-en">Ganapathi Puja</div>
+            <p class="step-card-body">
+              Lord Maha Ganapathi is invoked to preside over the wedding to ward off any obstacles to the ceremonies and
+              bless the union with auspicious beginnings.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="ceremony-step-card">
+            <div class="step-card-header">
+              <span class="step-num-pill"><i class="fas fa-seedling"></i> Step 2</span>
+              <span class="step-time-pill"><i class="far fa-clock"></i> 10 minutes</span>
+            </div>
+            <div class="step-card-title-telugu">పుణ్యాహవాచనం</div>
+            <div class="step-card-title-en">Punyaha Vachana</div>
+            <p class="step-card-body">
+              The Priest proclaims the date, time, and location of the wedding in the cosmic era as sacred. He invokes
+              God to purify the wedding location and to bless the bride, bridegroom, their families, friends, and all
+              assembled for this holy occasion.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="ceremony-step-card">
+            <div class="step-card-header">
+              <span class="step-num-pill"><i class="fas fa-crown"></i> Step 3</span>
+              <span class="step-time-pill"><i class="far fa-clock"></i> 15 minutes</span>
+            </div>
+            <div class="step-card-title-telugu">గౌరీ పూజ &amp; వర పూజ</div>
+            <div class="step-card-title-en">Gowri Puja &amp; Vara Puja</div>
+            <p class="step-card-body">
+              <strong>Gowri Puja (10 mins):</strong> Goddess Gowri, consort of Lord Shiva, is worshipped to bless the
+              Bride with an auspicious, happy, prosperous, fruitful, and long married life, along with ideal progeny.
+              <br><br>
+              <strong>Vara Puja (5 mins):</strong> The Bride’s father welcomes
+              and brings the groom to the Kalyana Mantapa for the wedding.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="ceremony-step-card">
+            <div class="step-card-header">
+              <span class="step-num-pill"><i class="fas fa-gift"></i> Step 4</span>
+              <span class="step-time-pill"><i class="far fa-clock"></i> 10 minutes</span>
+            </div>
+            <div class="step-card-title-telugu">కన్యాదానం</div>
+            <div class="step-card-title-en">Kanyadanam</div>
+            <p class="step-card-body">
+              The Bride is made to sit in a cane weaved basket (symbolizing her father’s lap) and is given as a sacred
+              gift to the bridegroom through her parents with solemn Vedic blessings.
+            </p>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="ceremony-step-card">
+            <div class="step-card-header">
+              <span class="step-num-pill"><i class="fas fa-handshake"></i> Step 5</span>
+              <span class="step-time-pill"><i class="far fa-clock"></i> 5 minutes</span>
+            </div>
+            <div class="step-card-title-telugu">పాణిగ్రహణం</div>
+            <div class="step-card-title-en">Panigrahanam</div>
+            <p class="step-card-body">
+              This means “holding hands”. The groom tenderly holds the hands of the bride. The Mantras say: <em>“The
+                Devas have offered you to me in order that I may live the life of a householder (Grihasta). We shall not
+                part from each other even after we grow old!”</em>
+            </p>
+          </div>
+
+          <!-- Step 6: Highlight Subha Muhurtham -->
+          <div class="ceremony-step-card highlight">
+            <div class="step-card-header">
+              <span class="step-num-pill" style="background:var(--color-redwood); color:#ffffff;"><i
+                  class="fas fa-star"></i> Step 6 • Sumuhurtham</span>
+              <span class="step-time-pill" style="color:var(--color-redwood); font-weight:700;"><i
+                  class="far fa-clock"></i> 10 minutes</span>
+            </div>
+            <div class="step-card-title-telugu">శుభ ముహూర్తం (జీలకర్ర &amp; బెల్లం)</div>
+            <div class="step-card-title-en">Subha Muhurtham (Jeera &amp; Jaggery)</div>
+            <p class="step-card-body">
+              The sacred paste of Jeera (cumin seeds) and Jaggery is placed over each other's heads at the exact
+              auspicious moment. That creates an eternal tie of affinity and affection, happiness, and mutual devotion
+              to each other.
+            </p>
+          </div>
+
+          <!-- Step 7: Highlight Mangalya Dharana -->
+          <div class="ceremony-step-card highlight">
+            <div class="step-card-header">
+              <span class="step-num-pill" style="background:var(--gold-primary); color:#ffffff;"><i
+                  class="fas fa-ring"></i> Step 7 • Sacred Thali</span>
+              <span class="step-time-pill" style="color:var(--gold-dark); font-weight:700;"><i class="far fa-clock"></i>
+                10 minutes</span>
+            </div>
+            <div class="step-card-title-telugu">మాంగళ్యధారణం &amp; సింధూరం</div>
+            <div class="step-card-title-en">Mangalya Dharana (Sindhur also)</div>
+            <p class="step-card-body">
+              Timed to the exact auspicious hour is the tying of the Mangala Sutra (Thali). The golden symbol of wedding
+              is the Mangalya, strewn on a golden chain with black beads. The Priest requests all the elders to bless
+              the Mangalya. The groom ties the Mangalya around the bride's neck with three sacred knots. Sindhur is also
+              applied to her forehead.
+            </p>
+          </div>
+
+          <!-- Step 8 -->
+          <div class="ceremony-step-card">
+            <div class="step-card-header">
+              <span class="step-num-pill"><i class="fas fa-hands-praying"></i> Step 8</span>
+              <span class="step-time-pill"><i class="far fa-clock"></i> 10 minutes</span>
+            </div>
+            <div class="step-card-title-telugu">తలంబ్రాలు (అక్షతారోపణం)</div>
+            <div class="step-card-title-en">Talambralu (Akshata Aropana)</div>
+            <p class="step-card-body">
+              The Couple hold a handful of rice and pour it on each other’s head to wish each other success and
+              prosperity. Just as rice is the only plant that is planted in one place and replanted in another place
+              after it grows to a certain stage, in this ceremony, it is used to symbolize the change in this stage in
+              the bride’s life.
+            </p>
+          </div>
+
+          <!-- Step 9 -->
+          <div class="ceremony-step-card">
+            <div class="step-card-header">
+              <span class="step-num-pill"><i class="fas fa-gem"></i> Step 9</span>
+              <span class="step-time-pill"><i class="far fa-clock"></i> 5 minutes</span>
+            </div>
+            <div class="step-card-title-telugu">పూలదండలు &amp; ఉంగరాల మార్పిడి</div>
+            <div class="step-card-title-en">Exchange of Garlands &amp; Gold Rings</div>
+            <p class="step-card-body">
+              The exchange of floral garlands symbolizes their one soul in two bodies—the inward acceptance by each of
+              the other's very fragrance. The bride and the groom then exchange gold wedding rings.
+            </p>
+          </div>
+
+          <!-- Step 10 -->
+          <div class="ceremony-step-card">
+            <div class="step-card-header">
+              <span class="step-num-pill"><i class="fas fa-fire"></i> Step 10</span>
+              <span class="step-time-pill"><i class="far fa-clock"></i> 10 minutes</span>
+            </div>
+            <div class="step-card-title-telugu">ప్రధాన హోమం (హవన్)</div>
+            <div class="step-card-title-en">Havan / Pradhana Homam</div>
+            <p class="step-card-body">
+              Homa is usually a witness of marriage. The Agni hotra protects them at all times. This sacrificial fire
+              signifies all deities’ divine blessings upon the newlyweds.
+            </p>
+          </div>
+
+          <!-- Step 11: Sapthapadi Seven Vows -->
+          <div class="ceremony-step-card highlight">
+            <div class="step-card-header">
+              <span class="step-num-pill" style="background:var(--gold-primary); color:#ffffff;"><i
+                  class="fas fa-shoe-prints"></i> Step 11 • Seven Sacred Vows</span>
+              <span class="step-time-pill"><i class="far fa-clock"></i> 10 minutes</span>
+            </div>
+            <div class="step-card-title-telugu">సప్తపది (ఏడు అడుగులు)</div>
+            <div class="step-card-title-en">Sapthapadi (The Seven Steps &amp; Vows)</div>
+            <p class="step-card-body">
+              The priest ties the sacred nuptial knot joining the couple's garments. Taking seven sacred steps together
+              around the Agni Hotra, they seal their eternal union with seven vows:
+            </p>
+            <div class="sapthapadi-compact-box">
+              <div class="vow-chip"><span>1.</span> Nourishment &amp; Home Responsibilities</div>
+              <div class="vow-chip"><span>2.</span> Strength, Courage &amp; Protection</div>
+              <div class="vow-chip"><span>3.</span> Prosperity &amp; Sharing Wealth</div>
+              <div class="vow-chip"><span>4.</span> Joy, Peace &amp; Spiritual Values</div>
+              <div class="vow-chip"><span>5.</span> Virtuous Children &amp; Lineage</div>
+              <div class="vow-chip"><span>6.</span> Lifelong Companionship &amp; Harmony</div>
+              <div class="vow-chip"><span>7.</span> Eternal Love, Health &amp; Devotion</div>
+            </div>
+          </div>
+
+          <!-- Step 12: Concluding Blessings -->
+          <div class="ceremony-step-card">
+            <div class="step-card-header">
+              <span class="step-num-pill"><i class="fas fa-sun"></i> Step 12 • Concluding Blessings</span>
+              <span class="step-time-pill"><i class="far fa-clock"></i> 15 minutes</span>
+            </div>
+            <div class="step-card-title-telugu">హారతి, ఆశీర్వచనం &amp; అరుంధతీ దర్శనం</div>
+            <div class="step-card-title-en">Harathi, Ashirvachanam &amp; Arundhati Darshanam</div>
+            <p class="step-card-body">
+              The wedding ceremonies culminate in three sacred concluding blessings:
+            </p>
+            <div class="ceremony-substeps-list">
+              <div class="substep-item">
+                <strong><i class="fas fa-fire-flame-curved" style="color:var(--color-redwood); margin-right:4px;"></i>
+                  హారతి (Harathi):</strong>
+                Turmeric and kumkum flame offering to ward off negative energies and invoke divine auspiciousness.
+              </div>
+              <div class="substep-item">
+                <strong><i class="fas fa-hands-holding" style="color:var(--gold-dark); margin-right:4px;"></i> ఆశీర్వచనం
+                  (Ashirvachanam):</strong>
+                Priests, elders, and all guests shower the couple with yellow sacred rice (అక్షతలు / Akshantalu) and
+                flowers.
+              </div>
+              <div class="substep-item">
+                <strong><i class="fas fa-star" style="color:var(--gold-primary); margin-right:4px;"></i> అరుంధతీ దర్శనం
+                  (Arundhati Darshanam):</strong>
+                The newlyweds salute the Sun and gaze toward the pious star Arundhati, pledging lifelong fidelity and
+                devotion.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Concluding Blessing Badge -->
+        <div class="subham-bhavatu-badge">
+          <div class="subham-bhavatu-text">“శుభం భవతు”</div>
+          <div class="subham-bhavatu-sub">May Divine Blessings, Prosperity, and Peace Abound</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         WEDDING LIVE STREAM (YOUTUBE EMBED)
+         ========================================================================= -->
+    <section id="livestream" class="section livestream-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="live-pill-badge">
+            <span class="live-indicator-dot"></span> LIVE BROADCAST • ప్రత్యక్ష ప్రసారం
+          </div>
+          <h2 class="section-title"><span class="california-gradient-text">Wedding Live Stream</span></h2>
+          <p class="section-description">
+            For our beloved family and friends celebrating with us from afar in India and across the world,
+            join our sacred Telugu wedding ceremony live from the Kalyana Mandapam at Stemple Creek Ranch.
+          </p>
+        </div>
+
+        <div class="livestream-card">
+          <!-- Responsive YouTube Video Wrapper (16:9) -->
+          <div class="livestream-player-container">
+            <iframe class="livestream-iframe"
+              src="https://www.youtube-nocookie.com/embed/live_stream?channel=UC4R8DWoMoI7CAwX8_BQQ5vg"
+              title="Ankitha &amp; Yeshwanth Wedding Celebration Live Stream"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <!-- Live Broadcast Info Bar -->
+          <div class="livestream-info-panel">
+            <div class="livestream-times-grid">
+              <div class="livestream-time-col">
+                <div class="time-zone-label"><i class="fas fa-map-pin"></i> California Time (PST)</div>
+                <div class="time-zone-val">Thursday, Nov 26, 2026</div>
+                <div class="time-zone-highlight">
+                  <i class="far fa-clock"></i> 8:30 AM – 10:30 AM PST (Muhurtham: 9:20 – 10:20 AM)
+                </div>
+                <div class="time-zone-sub">Ashirvad: 10:30 AM | Lunch: 11:30 AM | Wrap Up: 3:00 PM PST</div>
+              </div>
+
+              <div class="livestream-time-col">
+                <div class="time-zone-label"><i class="fas fa-om"></i> India Standard Time (IST)</div>
+                <div class="time-zone-val">Thursday, Nov 26, 2026</div>
+                <div class="time-zone-highlight">
+                  <i class="far fa-clock"></i> 10:00 PM – 12:00 AM IST (ముహూర్తం: 10:50 PM IST)
+                </div>
+                <div class="time-zone-sub">ఆశీర్వాదం: 12:00 AM | లంచ్: 1:00 AM | ముగింపు: 4:30 AM IST (Nov 27)</div>
+              </div>
+            </div>
+
+            <div class="livestream-cta-row">
+              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="btn btn-redwood">
+                <i class="fab fa-youtube"></i> Open Live Stream on YouTube
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Venue & Travel Section (Stemple Creek Ranch - Real Photos) -->
+    <section id="venue" class="section venue-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle">Our Wedding Venue</div>
+          <h2 class="section-title"><span class="california-gradient-text">Stemple Creek Ranch</span></h2>
+          <p class="section-description">A historic, regenerative organic ranch nestled in the picturesque rolling hills
+            of Tomales in West Marin, California.</p>
+        </div>
+
+        <div class="venue-grid">
+
+          <!-- Real Stemple Creek Ranch Photographs & Map Gallery (One Column) -->
+          <div class="venue-visual" style="display:flex; flex-direction:column; gap:1.25rem;">
+
+            <!-- Real Exterior Red Barn & Rolling Hills -->
+            <div
+              style="position:relative; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-elevated); border:2px solid rgba(200, 142, 26, 0.35);">
+              <img src="assets/images/real_barn_driveway.jpg"
+                alt="Real Stemple Creek Ranch Red Barn and Rolling Hills in Tomales, California"
+                style="width:100%; height:230px; object-fit:cover; display:block;">
+              <div class="venue-visual-overlay">
+                <div class="venue-name-badge">Stemple Creek Ranch</div>
+                <div class="venue-location-badge">Historic Red Barn &amp; Rolling Hills • Tomales, CA</div>
+              </div>
+            </div>
+
+            <!-- Real Barn Interior Reception Hall -->
+            <div
+              style="position:relative; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-elevated); border:2px solid rgba(200, 142, 26, 0.35);">
+              <img src="assets/images/real_barn_interior.jpg"
+                alt="Real Stemple Creek Ranch Barn Interior Reception and Dining"
+                style="width:100%; height:200px; object-fit:cover; display:block;">
+              <div class="venue-visual-overlay">
+                <div class="venue-name-badge">Historic Timber Barn Reception</div>
+                <div class="venue-location-badge">Celebratory Lunch &amp; Reception at 11:30 AM</div>
+              </div>
+            </div>
+
+            <!-- Small One-Column Google Maps Embed Card -->
+            <div class="venue-map-card"
+              style="position:relative; border-radius:var(--radius-lg); overflow:hidden; border:2px solid rgba(200, 142, 26, 0.35); box-shadow:var(--shadow-elevated); background:#ffffff;">
+              <div
+                style="padding: 0.55rem 1rem; background: var(--bg-cream); border-bottom: 1px solid rgba(200, 142, 26, 0.25); display: flex; align-items: center; justify-content: space-between;">
+                <span
+                  style="font-size: 0.85rem; font-weight: 700; color: var(--color-redwood); display: flex; align-items: center; gap: 0.4rem;">
+                  <i class="fas fa-map-location-dot"></i> Interactive Map
+                </span>
+                <span style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">
+                  Tomales, CA 94971
+                </span>
+              </div>
+              <iframe
+                src="https://maps.google.com/maps?q=Stemple+Creek+Ranch,+900+Burbank+Lane,+Tomales,+CA+94971&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                width="100%" height="240" style="border:0; display:block;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Google Maps Location Pin for Stemple Creek Ranch, Tomales, CA">
+              </iframe>
+            </div>
+
+          </div>
+
+          <div class="venue-details-card">
+            <h3 style="font-size:1.8rem; margin-bottom: 0.5rem; color:var(--text-main);">Destination &amp; Travel Guide
+            </h3>
+            <p style="color:var(--text-muted); font-size: 0.98rem;">A 4th-generation family ranch renowned for
+              sustainable carbon-neutral farming and stream restoration, framed by rolling golden coastal hills,
+              weathered timber barns, and coastal breezes.</p>
+
+            <div class="venue-address-box">
+              <div class="venue-address-title">Venue Address</div>
+              <div class="venue-address-text">
+                Stemple Creek Ranch<br>
+                900 Burbank Lane, Tomales, CA 94971<br>
+                United States
+              </div>
+            </div>
+
+            <ul class="travel-tips-list">
+              <li class="travel-tip-item">
+                <i class="fas fa-shoe-prints"></i>
+                <div>
+                  <strong>Footwear &amp; Ranch Pathways:</strong> For comfort when strolling along the scenic outdoor
+                  pathways, lawn, and historic wooden timber decking of Stemple Creek Ranch, flat, block, or wedge
+                  footwear is recommended.
+                </div>
+              </li>
+              <li class="travel-tip-item">
+                <i class="fas fa-plane-departure"></i>
+                <div>
+                  <strong>Airports:</strong> San Francisco International (SFO) &amp; Oakland (OAK) are ~1 hour 15
+                  minutes away; Charles M. Schulz Sonoma County Airport (STS in Santa Rosa) is ~40 minutes away.
+                </div>
+              </li>
+              <li class="travel-tip-item">
+                <i class="fas fa-map-marked-alt"></i>
+                <div>
+                  <strong>Navigation &amp; Parking:</strong> Due to intermittent cellular service in rural West Marin,
+                  we recommend saving offline maps prior to your journey. Ample complimentary parking is provided
+                  on-site.
+                </div>
+              </li>
+            </ul>
+
+            <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:2rem;">
+              <a href="https://maps.app.goo.gl/vUiir9sNfG2E5FXt8" target="_blank" rel="noopener noreferrer"
+                class="btn btn-redwood btn-sm">
+                <i class="fas fa-directions"></i> Google Maps Directions
+              </a>
+              <a href="https://maps.apple.com/?daddr=900+Burbank+Ln+Tomales+CA+94971" target="_blank"
+                rel="noopener noreferrer" class="btn btn-outline-gold btn-sm">
+                <i class="fab fa-apple"></i> Apple Maps
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RSVP Section (Embedded Google Form) -->
+    <section id="rsvp" class="section rsvp-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle">Please Respond</div>
+          <h2 class="section-title"><span class="california-gradient-text">Wedding RSVP</span></h2>
+          <p class="section-description">Kindly let us know if you can join us by November 8, 2026. Please complete our
+            official RSVP form below.</p>
+        </div>
+
+        <div class="rsvp-box-wrapper" style="max-width: 860px; margin: 0 auto;">
+          <div class="rsvp-card" style="padding: 2.5rem 1.5rem; text-align: center;">
+
+            <div class="rsvp-header-banner"
+              style="margin-bottom: 2rem; border-bottom: 1px solid rgba(197, 152, 39, 0.25); padding-bottom: 1.5rem;">
+              <h3 style="font-size: 2.1rem; margin-bottom: 0.5rem; color: var(--text-main);">Join Our Celebration</h3>
+              <p
+                style="color: var(--text-muted); font-size: 1rem; max-width: 620px; margin: 0 auto 1.5rem; line-height: 1.6;">
+                We are thrilled to celebrate our special day with you! Please submit your response and dietary
+                preferences through the embedded form below, or open it in a new window.
+              </p>
+
+              <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="https://forms.gle/UVwjsUtFKT6nmSxG8" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-redwood">
+                  <i class="fas fa-external-link-alt"></i> Open RSVP in Google Forms
+                </a>
+                <button class="btn btn-outline-gold btn-add-calendar">
+                  <i class="far fa-calendar-plus"></i> Add to Calendar (.ics)
+                </button>
+              </div>
+            </div>
+
+            <!-- Embedded Google Form Frame -->
+            <div class="google-form-wrapper"
+              style="position: relative; width: 100%; border-radius: var(--radius-md); overflow: hidden; background: #ffffff; border: 1.5px solid rgba(197, 152, 39, 0.3); box-shadow: var(--shadow-subtle);">
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLScPvQlBFKurdHDQ2kHsCeVFGx2ly57wchpim0oKDQLEx2DPTQ/viewform?embedded=true"
+                width="100%" height="920" frameborder="0" marginheight="0" marginwidth="0"
+                style="display: block; border: none; width: 100%;" title="Wedding RSVP Google Form">
+                Loading RSVP Form…
+              </iframe>
+            </div>
+
+            <!-- Direct Link Fallback / Help Notice -->
+            <div style="margin-top: 1.5rem; font-size: 0.92rem; color: var(--text-muted);">
+              Having trouble viewing or submitting the embedded form?
+              <a href="https://forms.gle/UVwjsUtFKT6nmSxG8" target="_blank" rel="noopener noreferrer"
+                style="color: var(--color-redwood); font-weight: 700; text-decoration: underline;">
+                Click here to open directly in Google Forms <i class="fas fa-arrow-right"
+                  style="font-size: 0.8rem;"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       FOOTER (LIGHT LUXURY TELUGU BLESSINGS)
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-monogram">AY</div>
+      <div class="footer-couple">Ankitha &amp; Yeshwanth</div>
+
+      <div class="footer-telugu-blessing">
+        ॥ శ్రీరస్తు • శుభమస్తు • నిత్య కల్యాణం పచ్చతోరణం ॥
+      </div>
+
+      <p class="footer-blessing">
+        "Blessed with everlasting love, joy, harmony, and the warmth of beloved family and dear friends."
+      </p>
+
+      <ul class="footer-links">
+        <li><a href="#home" class="footer-link">Home</a></li>
+        <li><a href="#story" class="footer-link">Our Journey</a></li>
+        <li><a href="#events" class="footer-link">Schedule</a></li>
+        <li><a href="#ceremony" class="footer-link">Ceremony Guide</a></li>
+        <li><a href="#venue" class="footer-link">Venue</a></li>
+        <li><a href="#rsvp" class="footer-link">RSVP</a></li>
+      </ul>
+
+      <p class="footer-copyright">
+        © 2026 Ankitha &amp; Yeshwanth Wedding Celebration • Stemple Creek Ranch, Tomales, California.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Clean Static Scripts -->
+  <script src="js/app.js?v=23"></script>
+</body>
+
+</html>
